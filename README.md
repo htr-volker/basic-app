@@ -2,3 +2,4 @@
 
 Simply renders an HTML page. Little more than a template.
 
+New Feature.
