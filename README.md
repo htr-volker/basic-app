@@ -2,7 +2,4 @@
 
 Simply renders an HTML page. Little more than a template.
 
-Master update.
-New Feature.
-
-Even newer feature.
+This app is written in Flask.
