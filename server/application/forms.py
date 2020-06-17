@@ -35,4 +35,8 @@ class AddStudent(FlaskForm):
             validators = [
                 Length(max = 50)
             ])
+    subject = StringField('Subject',
+            validators = [
+                Length(max = 50)
+            ])
     submit = SubmitField('Add Student')

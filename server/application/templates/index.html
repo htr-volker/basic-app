@@ -4,8 +4,8 @@
     {% for teacher in teachers %}
         <div>
             <h3>{{ teacher.title }} {{ teacher.surname }}'s Class</h3>
-            {% for student in teacher.classrooms %}
-                <p>{{ student.first_name }} {{student.last_name }}</p>
+            {% for classroom in teacher.students %}
+                <p>{{ classroom.subject }} – {{ classroom.students.first_name }} {{ classroom.students.last_name }}</p>
             {% endfor %}
         </div>
     {% endfor %}

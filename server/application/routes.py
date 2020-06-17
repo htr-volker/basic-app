@@ -3,7 +3,7 @@ Python file that handles hyperlink routing within the site
 '''
 from application import app, db
 from flask import render_template, redirect, url_for, request
-from application.models import Students, Teachers
+from application.models import Students, Teachers, Classrooms
 from application.forms import AddTeacher, AddStudent
 import requests
 from os import getenv
@@ -37,19 +37,23 @@ def add_student():
     if form.validate_on_submit():
         student = Students(
             first_name = form.first_name.data,
-            last_name = form.last_name.data,
+            last_name = form.last_name.data
         )
+
+        classroom = Classrooms(subject = form.subject.data)
+        classroom.students = student
         
         if form.teacher_one.data != '':
             teacher_one = Teachers.query.filter_by(surname = form.teacher_one.data).first()
             if teacher_one:
-                student.classrooms.append(teacher_one)
+                teacher_one.students.append(classroom)
         
         if form.teacher_two.data != '':
             teacher_two = Teachers.query.filter_by(surname = form.teacher_two.data).first()
             if teacher_two:
-                student.classrooms.append(teacher_two)
+                teacher_two.students.append(classroom)
 
+        
         db.session.add(student)
         db.session.commit()
         return redirect(url_for('home'))
