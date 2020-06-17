@@ -20,8 +20,8 @@ def add_teacher():
     form = AddTeacher()
     if form.validate_on_submit():
         teacher = Teachers(
-                title = form.title.data,
-                surname = form.surname.data
+            title = form.title.data,
+            surname = form.surname.data
         )
         db.session.add(teacher)
         db.session.commit()
@@ -36,8 +36,8 @@ def add_student():
     form = AddStudent()
     if form.validate_on_submit():
         student = Students(
-                first_name = form.first_name.data,
-                last_name = form.last_name.data,
+            first_name = form.first_name.data,
+            last_name = form.last_name.data,
         )
         
         if form.teacher_one.data != '':
