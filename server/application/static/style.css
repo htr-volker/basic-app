@@ -1,13 +1,19 @@
 body {
-    background-color: rgb(31, 31, 31);
-    background-image: url(https://i.imgur.com/np6MEBT.jpg);
-    color: mediumseagreen;
+    background-color: rgb(255, 227, 227);
+    color: black;
     width: 500px;
     margin: 0 auto;
-    border-left: 5px solid mediumseagreen;
 }
 
 h1 {
-    color: mediumseagreen;
+    color: black;
     text-align:center;
+}
+
+a {
+    color: blue;
+    text-align:center;
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
 }

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<h1>Enter Teacher</h1>
+<div class="form">
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			{{ form.title.label }}
+			{% if form.title.errors %}
+				{{ form.title }}
+				<div class="error">
+					{% for error in form.title.errors %}
+						<span>{{ error }}</span>
+					{% endfor %}
+				</div>
+			{% else %}
+				{{ form.title }}
+			{% endif %}
+		</div>
+        <br>
+        <div class="form-group">
+            {{ form.surname.label }}
+            {% if form.surname.errors %}
+                {{ form.surname }}
+                <div class="error">
+                    {% for error in form.surname.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.surname }}
+            {% endif %}
+        </div>
+        <br>
+		<div class="form-group">
+			{{ form.submit }}
+		</div>
+	</form>
+</div>
+{% endblock body_content %}

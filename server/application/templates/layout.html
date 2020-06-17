@@ -4,8 +4,12 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	<title>{{ title }} - Basic App</title>
 		<div class="title">
-			<h1>Basic App</h1>
+			<h1>High School Ledger</h1>
 		</div>
+		<div class="navbar">
+			<a href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('add_teacher') }}">Add Teacher</a>
+			<a href="{{ url_for('add_student') }}">Add Student</a>
 	</head>
 	<body>
 		{% block body_content %}

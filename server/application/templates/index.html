@@ -1,4 +1,12 @@
 {% extends "layout.html" %}
 {% block body_content %}
-	<h2>The App is Running</h2>
+	<h2>List of Classes</h2>
+    {% for teacher in teachers %}
+        <div>
+            <h3>{{ teacher.title }} {{ teacher.surname }}'s Class</h3>
+            {% for student in teacher.classrooms %}
+                <p>{{ student.first_name }} {{student.last_name }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
 {% endblock body_content %}
