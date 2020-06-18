@@ -32,6 +32,5 @@ class Teachers(db.Model):
 
 classrooms = db.Table('classrooms', db.Model.metadata,
     db.Column('teacher_ID', db.Integer, db.ForeignKey('teachers.id')),
-    db.Column('student_ID', db.Integer, db.ForeignKey('students.id')),
-    db.Column('class_size', db.Integer, default = 0)
+    db.Column('student_ID', db.Integer, db.ForeignKey('students.id'))
 )
